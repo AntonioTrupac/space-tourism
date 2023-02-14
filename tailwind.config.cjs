@@ -10,6 +10,9 @@ module.exports = {
         "transparent-nav": "hsl(0 0% 59% / 0.3)",
         test: "hsl(0 0% 100% / 0.1)",
       },
+      backgroundImage: {
+        menu: "url('/icon-hamburger.svg')",
+      },
     },
   },
   plugins: [],

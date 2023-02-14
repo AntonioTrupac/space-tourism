@@ -10,9 +10,12 @@
     />
   </div>
 
+  <button class="md:hidden absolute md:static w-[24px] h-[21px] aspect-square top-11 right-8 z-[9999] bg-menu" aria-controls="primary-navigation" aria-expanded="false">
+    <span class="sr-only">Menu</span>
+  </button>
 
   <nav class="">
-    <ul id="primary-navigation" class="flex flex-col md:flex-row pt-28 md:pt-0 pl-8 md:pl-0 fixed md:static inset-y-0 bg-test backdrop-blur-lg right-0 left-[30%]" data-visible="false">
+    <ul id="primary-navigation" class="flex flex-col z-[1000] md:flex-row gap-5 pt-28 md:pt-0 pl-8 md:pl-0 fixed md:static inset-y-0 supports-[]: bg-test backdrop-blur-lg right-0 left-[30%]" data-visible="false">
       <li>
         <a  href="/" class="uppercase text-white tracking-[2.7px] mr-2"><span aria-hidden="true" class="font-bold mr-2">00</span>Home</a>
       </li>
