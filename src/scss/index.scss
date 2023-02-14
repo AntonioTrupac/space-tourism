@@ -2,8 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-
-
 @layer base {
   :root {
     --empty: ;
@@ -56,7 +54,22 @@
     --tw-backdrop-sepia: var(--empty, /*!*/ /*!*/);
   }
 
+  body {
+    background-size: contain;
+    // background-repeat: no-repeat;
+    // background-position: center;
+    min-height: 100dvh;
+
+    background-image: url("/home/background-home-mobile.jpg");
+
+    @media (min-width: 768px) {
+      background-image: url("/home/background-home-tablet.jpg");
+
+      // background-size: cover;
+    }
+
+    @media (min-width: 1024px) {
+      background-image: url("/home/background-home-desktop.jpg");
+    }
+  }
 }
-
-
- 
