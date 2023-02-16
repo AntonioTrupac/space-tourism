@@ -12,6 +12,7 @@ module.exports = {
       },
       backgroundImage: {
         menu: "url('/icon-hamburger.svg')",
+        close: "url('/icon-close.svg')",
       },
     },
   },

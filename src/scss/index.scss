@@ -3,6 +3,10 @@
 @import "tailwindcss/utilities";
 
 @layer base {
+  body {
+    overflow-x: hidden;
+  }
+
   :root {
     --empty: ;
   }
