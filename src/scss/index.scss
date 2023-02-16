@@ -3,10 +3,6 @@
 @import "tailwindcss/utilities";
 
 @layer base {
-  body {
-    overflow-x: hidden;
-  }
-
   :root {
     --empty: ;
   }
@@ -59,7 +55,9 @@
   }
 
   body {
-    background-size: contain;
+    overflow-x: hidden;
+    min-height: 100dvh;
+    // background-size: contain;
     // background-repeat: no-repeat;
     // background-position: center;
     min-height: 100dvh;

@@ -14,6 +14,10 @@ module.exports = {
         menu: "url('/icon-hamburger.svg')",
         close: "url('/icon-close.svg')",
       },
+      fontFamily: {
+        "barlow-condensed": ["Barlow Condensed", "sans-serif"],
+        bellefair: ["Bellefair", "serif"],
+      },
     },
   },
   plugins: [],
