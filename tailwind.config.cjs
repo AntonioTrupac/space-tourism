@@ -17,6 +17,10 @@ module.exports = {
       fontFamily: {
         "barlow-condensed": ["Barlow Condensed", "sans-serif"],
         bellefair: ["Bellefair", "serif"],
+        barlow: ["Barlow", "sans-serif"],
+      },
+      transitionProperty: {
+        explore: "opacity, transform",
       },
     },
   },
