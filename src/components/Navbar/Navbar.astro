@@ -74,8 +74,6 @@
   const primaryNav = document.querySelector("#primary-navigation");
   const mobileNavToggle = document.querySelector("#mobile-nav-toggle");
 
-  console.log(primaryNav, mobileNavToggle);
-
   if (mobileNavToggle && primaryNav) {
     mobileNavToggle.addEventListener("click", () => {
       const visiblity = primaryNav.getAttribute("data-visible");

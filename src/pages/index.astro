@@ -3,25 +3,34 @@ import Layout from "../layouts/Layout.astro";
 import "../scss/index.scss";
 ---
 
-<Layout title="Welcome to Astro.">
-  <main class="flex flex-col">
-    <p class="font-barlow-condensed text-white">So, you want to travel to</p>
-    <p class="font-bellefair text-white text-2xl">Space</p>
-    <div>
-      Let’s face it; if you want to go to space, you might as well genuinely go
-      to outer space and not hover kind of on the edge of it. Well sit back, and
-      relax because we’ll give you a truly out of this world experience!
+<Layout title="Home">
+  <main class="grid grid-cols-container gap-5">
+    <div
+      class="outline-1 outline-dashed outline-red-400 col-span-1 col-start-2"
+    >
+      <p
+        class="font-barlow-condensed tracking-barlow-condensed text-[28px] leading-[34px] uppercase text-secondary"
+      >
+        So, you want to travel to
+      </p>
+
+      <p class="font-bellefair text-white text-10xl uppercase">Space</p>
+
+      <p class="text-lg leading-8 text-secondary">
+        Let’s face it; if you want to go to space, you might as well genuinely
+        go to outer space and not hover kind of on the edge of it. Well sit
+        back, and relax because we’ll give you a truly out of this world
+        experience!
+      </p>
     </div>
 
-    <div class="flex">
-      <div class="mt-5">
-        <a
-          href="#"
-          class="font-bellefair relative bg-white transition-explore after:duration-500 text-[32px] after:transition-explore place-content-center grid aspect-square tracking-[2px] px-8 rounded-full z-10 after:absolute after:z-[-1px] after:w-full after:h-full after:opacity-0 after:bg-white/20 after:rounded-full hover:after:opacity-100 focus:after:opacity-100 focus:after:scale-150 hover:after:scale-150"
-        >
-          EXPLORE</a
-        >
-      </div>
+    <div class="outline-1 outline-dashed outline-blue-400">
+      <a
+        href="#"
+        class="font-bellefair relative bg-white transition-explore after:duration-500 text-[32px] after:transition-explore place-content-center inline-grid aspect-square tracking-[2px] px-8 rounded-full z-10 after:absolute after:z-[-1px] after:w-full after:h-full after:opacity-0 after:bg-white/20 after:rounded-full hover:after:opacity-100 focus:after:opacity-100 focus:after:scale-150 hover:after:scale-150"
+      >
+        EXPLORE</a
+      >
     </div>
   </main>
 </Layout>
