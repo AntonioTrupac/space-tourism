@@ -1,10 +1,24 @@
-<header id="primary-header" class="flex items-center justify-between">
-  <div class="m-8">
+<header
+  id="primary-header"
+  class="flex items-center mt-6 ml-6 md:mt-0 lg:mt-8 justify-between"
+>
+  <div>
     <img
       src="/logo.svg"
       alt="logo"
       height={48}
       width={48}
+      class="hidden md:block"
+      sizes="(min-width: 1280px) 50vw, 100vw"
+      loading="eager"
+    />
+
+    <img
+      src="/logo.svg"
+      alt="logo"
+      height={40}
+      width={40}
+      class="md:hidden"
       sizes="(min-width: 1280px) 50vw, 100vw"
       loading="eager"
     />
@@ -12,7 +26,7 @@
 
   <button
     id="mobile-nav-toggle"
-    class="md:hidden aria-expanded:bg-close bg-no-repeat aria-expanded:w-5 aria-expanded:right-[35px] absolute md:static w-[24px] h-[21px] aspect-square top-11 right-8 z-[9999] bg-menu"
+    class="md:hidden aria-expanded:bg-close bg-no-repeat aria-expanded:w-5 aria-expanded:right-[35px] absolute md:static w-[24px] h-[21px] aspect-square top-8 md:11 right-8 z-[9999] bg-menu"
     aria-controls="primary-navigation"
     aria-expanded="false"
   >
@@ -22,13 +36,13 @@
   <nav>
     <ul
       id="primary-navigation"
-      class="flex flex-col z-[1000] transition-transform md:transition-none data-[visible='true']:translate-x-0 translate-x-[100%] md:translate-x-0 md:flex-row gap-5 pt-28 md:pt-0 pl-8 md:pl-0 fixed md:static inset-y-0 supports-[]: bg-test backdrop-blur-lg right-0 left-[30%]"
+      class="flex flex-col z-[1000] transition-transform md:transition-none data-[visible='true']:translate-x-0 translate-x-[100%] md:translate-x-0 md:flex-row gap-5 pt-28 md:px-12 md:py-8 pl-8 fixed md:static inset-y-0 supports-[]: bg-test backdrop-blur-lg right-0 left-[30%]"
       data-visible="false"
     >
       <li
         class="border-b-4 border-transparent hover:border-b-white/25 active:border-b-white"
       >
-        <a href="/" class="uppercase text-white tracking-[2.7px] mr-2"
+        <a href="/" class="uppercase text-white tracking-[2.7px]"
           ><span aria-hidden="true" class="font-bold mr-2 md:hidden lg:inline"
             >00</span
           >Home</a
@@ -38,9 +52,7 @@
       <li
         class="border-b-4 border-transparent hover:border-b-white/25 active:border-b-white"
       >
-        <a
-          href="/destination"
-          class="uppercase text-white tracking-[2.7px] mr-2"
+        <a href="/destination" class="uppercase text-white tracking-[2.7px]"
           ><span aria-hidden="true" class="font-bold mr-2 md:hidden lg:inline"
             >01</span
           >Destination</a
@@ -50,7 +62,7 @@
       <li
         class="border-b-4 border-transparent hover:border-b-white/25 active:border-b-white"
       >
-        <a href="/crew" class="uppercase text-white tracking-[2.7px] mr-2"
+        <a href="/crew" class="uppercase text-white tracking-[2.7px]"
           ><span aria-hidden="true" class="font-bold mr-2 md:hidden lg:inline"
             >02</span
           >Crew</a
@@ -60,7 +72,7 @@
       <li
         class="border-b-4 border-transparent hover:border-b-white/25 active:border-b-white"
       >
-        <a href="/technology" class="uppercase text-white tracking-[2.7px] mr-2"
+        <a href="/technology" class="uppercase text-white tracking-[2.7px]"
           ><span aria-hidden="true" class="font-bold mr-2 md:hidden lg:inline"
             >03</span
           >Technology</a

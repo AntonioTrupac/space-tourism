@@ -1,6 +1,6 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 @layer base {
   :root {
@@ -59,20 +59,17 @@
     grid-template-rows: min-content 1fr;
     min-height: 100vh;
 
-    // background-size: contain;
-    // background-repeat: no-repeat;
-    // background-position: center;
-
-    background-image: url("/home/background-home-mobile.jpg");
+    background-size: cover;
+    background-position: bottom center;
+    background-image: url('/home/background-home-mobile.jpg');
 
     @media (min-width: 768px) {
-      background-image: url("/home/background-home-tablet.jpg");
-
-      // background-size: cover;
+      background-position: center center;
+      background-image: url('/home/background-home-tablet.jpg');
     }
 
     @media (min-width: 1024px) {
-      background-image: url("/home/background-home-desktop.jpg");
+      background-image: url('/home/background-home-desktop.jpg');
     }
   }
 }
