@@ -3,7 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import "../scss/index.scss";
 ---
 
-<Layout title="Home">
+<Layout
+  title="Home"
+  className="bg-home-mobile md:bg-home-tablet md:bg-center lg:bg-home-desktop"
+>
   <main
     id="main"
     class="grid lg:grid-cols-container place-items-center lg:gap-5 text-center lg:text-left lg:items-end lg:pb-grid"

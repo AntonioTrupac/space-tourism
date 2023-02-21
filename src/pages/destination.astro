@@ -1,0 +1,23 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import "../scss/index.scss";
+// import data from "../data/data.json";
+
+// const { destinations } = data;
+// const MOON = "Moon";
+---
+
+<Layout
+  title="Destination"
+  className="bg-destination-mobile md:bg-destination-tablet md:bg-center lg:bg-destination-desktop"
+>
+  <main class="">
+    <!-- Create tabs component based on destination names using tailwind css -->
+    <h1
+      class="mt-6 text-center uppercase font-barlow-condensed tracking-barlow-condensed-sm leading-[19px] text-white"
+    >
+      <span class="mr-[18px] font-bold text-white/30">01</span>Pick your
+      destination
+    </h1>
+  </main>
+</Layout>

@@ -3,10 +3,6 @@
 @import 'tailwindcss/utilities';
 
 @layer base {
-  :root {
-    --empty: ;
-  }
-
   body {
     display: grid;
     grid-template-rows: min-content 1fr;
@@ -14,15 +10,5 @@
 
     background-size: cover;
     background-position: bottom center;
-    background-image: url('/home/background-home-mobile.jpg');
-
-    @media (min-width: 768px) {
-      background-position: center center;
-      background-image: url('/home/background-home-tablet.jpg');
-    }
-
-    @media (min-width: 1024px) {
-      background-image: url('/home/background-home-desktop.jpg');
-    }
   }
 }
