@@ -5,23 +5,26 @@ import "../scss/index.scss";
 
 <Layout title="Home">
   <main
-    class="grid lg:grid-cols-container place-items-center gap-5 text-center lg:text-left lg:items-end lg:pb-grid"
+    id="main"
+    class="grid lg:grid-cols-container place-items-center lg:gap-5 text-center lg:text-left lg:items-end lg:pb-grid"
   >
-    <div class="lg:col-span-1 lg:col-start-2 px-6">
+    <div
+      class="lg:col-span-1 lg:col-start-2 px-6 md:w-[450px] lg:w-auto md:px-0"
+    >
       <h1
         class="font-barlow-condensed lg:tracking-barlow-condensed lg:text-[28px] text-base tracking-barlow-condensed-sm md:tracking-barlow-condensed-md md:text-xl md:leading-[34px] uppercase text-secondary"
       >
         So, you want to travel to
 
         <span
-          class="font-bellefair text-white text-[80px] leading-[100px] md:text-10xl uppercase block mt-4 md:mt-6"
+          class="font-bellefair text-white text-[80px] leading-[100px] md:text-10xl md:tracking-normal md:leading-[150px] lg:leading-[172px] uppercase block mt-4 md:mt-6"
         >
           Space
         </span>
       </h1>
 
       <p
-        class="lg:text-lg md:text-base md:leading-7 lg:leading-8 mt-4 md:mt-6 text-[15px] leading-[25px] text-secondary"
+        class="lg:text-lg md:text-base md:leading-7 lg:leading-8 md:tracking-normal mt-4 md:mt-6 text-[15px] leading-[25px] text-secondary"
       >
         Let’s face it; if you want to go to space, you might as well genuinely
         go to outer space and not hover kind of on the edge of it. Well sit

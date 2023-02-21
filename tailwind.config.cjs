@@ -36,7 +36,7 @@ module.exports = {
       },
       padding: {
         grid: 'max(6rem, 20vh)',
-        navClamp: 'clamp(6rem, 10vw, 9rem)',
+        navClamp: 'clamp(6rem, 10vw, 9rem)',      
       },
     },
   },

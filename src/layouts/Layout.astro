@@ -24,6 +24,13 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
+    <a
+      class="absolute left-0 m-3 -translate-y-16 bg-primary p-3 text-white transition focus:translate-y-0"
+      href="#main"
+    >
+      Skip Navigation
+    </a>
+
     <Navbar />
 
     <slot />
