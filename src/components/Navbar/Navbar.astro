@@ -1,3 +1,8 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+
 <header
   id="primary-header"
   class="flex items-center mt-6 ml-6 md:mt-0 lg:mt-8 justify-between lg:after:relative lg:after:block after:h-[1px] lg:after:bg-[#979797]/25 lg:after:w-full lg:after:order-1 lg:after:ml-[4rem] xl:after:ml-[8rem] lg:after:mr-[-2rem]"
@@ -39,40 +44,54 @@
       class="flex flex-col z-[1000] pl-8 transition-transform md:transition-none data-[visible='true']:translate-x-0 translate-x-[100%] md:translate-x-0 md:flex-row gap-8 pt-28 md:pt-0 md:px-12 lg:px-navClamp fixed md:static inset-y-0 bg-test backdrop-blur-lg right-0 left-[30%]"
       data-visible="false"
     >
-      <li
-        class="border-b-4 border-transparent hover:border-b-white/25 md:py-8 active:border-b-white"
-      >
-        <a href="/" class="uppercase text-white tracking-[2.7px]"
+      <li class="md:py-8">
+        <a
+          href="/"
+          class:list={[
+            "uppercase text-white tracking-[2.7px] border-b-2 border-transparent md:py-8 active:border-b-white",
+            currentPath === "" ? "border-b-white" : "",
+            currentPath === "" ? "" : "hover:border-b-white/25",
+          ]}
           ><span aria-hidden="true" class="font-bold mr-2 md:hidden lg:inline"
             >00</span
           >Home</a
         >
       </li>
 
-      <li
-        class="border-b-4 border-transparent hover:border-b-white/25 md:py-8 active:border-b-white"
-      >
-        <a href="/destination" class="uppercase text-white tracking-[2.7px]"
+      <li class="md:py-8">
+        <a
+          href="/destination"
+          class:list={[
+            "uppercase text-white tracking-[2.7px] border-b-2 border-transparent md:py-8 active:border-b-white",
+            currentPath === "destination" ? "border-b-white" : "",
+            currentPath === "destination" ? "" : "hover:border-b-white/25",
+          ]}
           ><span aria-hidden="true" class="font-bold mr-2 md:hidden lg:inline"
             >01</span
           >Destination</a
         >
       </li>
 
-      <li
-        class="border-b-4 border-transparent hover:border-b-white/25 md:py-8 active:border-b-white"
-      >
-        <a href="/crew" class="uppercase text-white tracking-[2.7px]"
+      <li class="md:py-8">
+        <a
+          href="/crew"
+          class:list={[
+            "uppercase text-white tracking-[2.7px] border-b-2 border-transparent hover:border-b-white/25 md:py-8 active:border-b-white",
+            currentPath === "crew" ? "border-b-white" : "",
+          ]}
           ><span aria-hidden="true" class="font-bold mr-2 md:hidden lg:inline"
             >02</span
           >Crew</a
         >
       </li>
 
-      <li
-        class="border-b-4 border-transparent hover:border-b-white/25 md:py-8 active:border-b-white"
-      >
-        <a href="/technology" class="uppercase text-white tracking-[2.7px]"
+      <li class="md:py-8">
+        <a
+          href="/technology"
+          class:list={[
+            "uppercase text-white tracking-[2.7px] border-b-2 border-transparent hover:border-b-white/25 md:py-8 active:border-b-white",
+            currentPath === "technology" ? "border-b-white" : "",
+          ]}
           ><span aria-hidden="true" class="font-bold mr-2 md:hidden lg:inline"
             >03</span
           >Technology</a
