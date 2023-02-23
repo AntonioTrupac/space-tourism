@@ -1,5 +1,6 @@
 ---
 import Layout from "src/layouts/Layout.astro";
+import { Picture } from "@astrojs/image/components";
 import "../scss/index.scss";
 // import data from "../data/data.json";
 
@@ -19,5 +20,59 @@ import "../scss/index.scss";
       <span class="mr-[18px] font-bold text-white/30">01</span>Pick your
       destination
     </h1>
+
+    <Picture
+      class="w-[170px] h-[170px] md:h-[500px] md:w-[500px] lg:h-[500px] object-cover mx-auto mt-6"
+      src="/destination/image-moon.webp"
+      alt="The moon"
+      widths={[170, 400, 800]}
+      sizes="(min-width: 1024px) 1024px, 100vw"
+      aspectRatio={1}
+    />
+
+    <div class="gap-6 flex text-secondary justify-center mt-6">
+      <button
+        aria-selected="true"
+        class="uppercase aria-selected:border-white aria-selected:border-b-2 aria-selected:text-white"
+        >Moon</button
+      >
+      <button
+        aria-selected="false"
+        class="uppercase aria-selected:border-white aria-selected:border-b-2 aria-selected:text-white"
+        >Mars</button
+      >
+      <button
+        aria-selected="false"
+        class="uppercase aria-selected:border-white aria-selected:border-b-2 aria-selected:text-white"
+        >Europa</button
+      >
+      <button
+        aria-selected="false"
+        class="uppercase aria-selected:border-white aria-selected:border-b-2 aria-selected:text-white"
+        >Titan</button
+      >
+    </div>
+
+    <div>
+      <h2>Moon</h2>
+
+      <p class="text-secondary">
+        See our planet as you’ve never seen it before. A perfect relaxing trip
+        away to help regain perspective and come back refreshed. While you’re
+        there, take in some history by visiting the Luna 2 and Apollo 11 landing
+        sites.
+      </p>
+
+      <div class="flex">
+        <div>
+          <h3 class="text-secondary">Avg. distance</h3>
+          <p class="text-white">384,400 km</p>
+        </div>
+        <div>
+          <h3 class="text-secondary">Est. travel time</h3>
+          <p class="text-white">3 days</p>
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
