@@ -20,73 +20,96 @@ import "../scss/index.scss";
       destination
     </h1>
 
-    <Picture
-      class="w-[170px] h-[170px] md:h-[300px] md:w-[300px] lg:h-[500px] object-cover mx-auto mt-6 md:mt-[60px]"
-      src="/destination/image-moon.webp"
-      alt="The moon"
-      widths={[170, 400, 800]}
-      sizes="(min-width: 1024px) 1024px, 100vw"
-      aspectRatio={1}
-    />
+    <div
+      class="lg:grid lg:grid-cols-container lg:items-center lg:place-items-center gap-28"
+    >
+      <div class="col-start-2">
+        <Picture
+          class="w-[170px] h-[170px] md:h-[300px] md:w-[300px] lg:h-[445px] lg:w-[445px] object-cover mx-auto mt-6 md:mt-[60px]"
+          src="/destination/image-moon.webp"
+          alt="The moon"
+          widths={[170, 400, 445]}
+          sizes="(min-width: 1024px) 1024px, 100vw"
+          aspectRatio={1}
+        />
+      </div>
 
-    <div class="gap-6 flex text-secondary justify-center mt-6 md:mt-14 pb-2">
-      <button
-        aria-selected="true"
-        class="uppercase border-transparent border-b-[3px] aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
-        >Moon</button
-      >
-      <button
-        aria-selected="false"
-        class="uppercase border-transparent border-b-[3px] aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
-        >Mars</button
-      >
-      <button
-        aria-selected="false"
-        class="uppercase border-transparent border-b-[3px] aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
-        >Europa</button
-      >
-      <button
-        aria-selected="false"
-        class="uppercase border-transparent border-b-[3px] aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
-        >Titan</button
-      >
-    </div>
-
-    <div class="text-center px-6 mt-5 md:mt-8 md:px-destination-body">
-      <h2
-        class="font-bellefair uppercase text-[56px] leading-[64px] text-white"
-      >
-        Moon
-      </h2>
-
-      <p class="font-barlow text-secondary text-[15px] leading-[25px]">
-        See our planet as you’ve never seen it before. A perfect relaxing trip
-        away to help regain perspective and come back refreshed. While you’re
-        there, take in some history by visiting the Luna 2 and Apollo 11 landing
-        sites.
-      </p>
-
-      <div class="h-[1px] w-full bg-[#383B4B] my-8 md:mt-[50px] md:mb-7"></div>
-
-      <div class="flex flex-col md:flex-row md:justify-around">
-        <div class="mb-8">
-          <h3
-            class="font-barlow-condensed text-secondary text-sm uppercase tracking-[2.36px] mb-3"
+      <div>
+        <div
+          class="gap-6 flex text-secondary justify-center mt-6 md:mt-14 pb-2 col-start-2 lg:justify-start"
+        >
+          <button
+            aria-selected="true"
+            class="uppercase border-transparent border-b-[3px] md:text-base md:leading-7 aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
+            >Moon</button
           >
-            Avg. distance
-          </h3>
-          <p class="font-bellefair text-[28px] uppercase leading-8 text-white">
-            384,400 km
-          </p>
+          <button
+            aria-selected="false"
+            class="uppercase border-transparent border-b-[3px] md:text-base md:leading-7 aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
+            >Mars</button
+          >
+          <button
+            aria-selected="false"
+            class="uppercase border-transparent border-b-[3px] md:text-base md:leading-7 aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
+            >Europa</button
+          >
+          <button
+            aria-selected="false"
+            class="uppercase border-transparent border-b-[3px] md:text-base md:leading-7 aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
+            >Titan</button
+          >
         </div>
 
-        <div>
-          <h3 class="text-secondary uppercase text-sm tracking-[2.36px] mb-3">
-            Est. travel time
-          </h3>
-          <p class="font-bellefair text-[28px] uppercase leading-8 text-white">
-            3 days
+        <div
+          class="text-center lg:text-left px-6 mt-5 md:mt-8 md:px-destination-body lg:px-0"
+        >
+          <h2
+            class="font-bellefair uppercase text-[56px] leading-[64px] md:text-[80px] md:leading-[92px] text-white"
+          >
+            Moon
+          </h2>
+
+          <p
+            class="font-barlow text-secondary text-[15px] leading-[25px] md:text-base md:leading-7"
+          >
+            See our planet as you’ve never seen it before. A perfect relaxing
+            trip away to help regain perspective and come back refreshed. While
+            you’re there, take in some history by visiting the Luna 2 and Apollo
+            11 landing sites.
           </p>
+
+          <div class="h-[1px] w-full bg-[#383B4B] my-8 md:mt-[50px] md:mb-7">
+          </div>
+
+          <div
+            class="flex flex-col md:flex-row md:justify-around lg:justify-start lg:gap-20"
+          >
+            <div class="mb-8">
+              <h3
+                class="font-barlow-condensed text-secondary text-sm uppercase tracking-[2.36px] mb-3"
+              >
+                Avg. distance
+              </h3>
+              <p
+                class="font-bellefair text-[28px] uppercase leading-8 text-white"
+              >
+                384,400 km
+              </p>
+            </div>
+
+            <div>
+              <h3
+                class="text-secondary uppercase text-sm tracking-[2.36px] mb-3"
+              >
+                Est. travel time
+              </h3>
+              <p
+                class="font-bellefair text-[28px] uppercase leading-8 text-white"
+              >
+                3 days
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -41,7 +41,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         container:
-          'minmax(2rem, 1fr) repeat(2, minmax(0, 550px)) minmax(2rem, 1fr)',
+          'minmax(2rem, 1fr) repeat(2, minmax(0, 600px)) minmax(2rem, 1fr)',
       },
       padding: {
         grid: 'max(6rem, 20vh)',
