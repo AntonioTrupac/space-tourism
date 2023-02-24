@@ -12,7 +12,7 @@ import "../scss/index.scss";
   title="Destination"
   className="bg-destination-mobile md:bg-destination-tablet md:bg-center lg:bg-destination-desktop"
 >
-  <main id="main">
+  <main id="main" class="lg:overflow-hidden">
     <h1
       class="mt-6 md:mt-10 text-center md:text-left md:px-destination-title uppercase font-barlow-condensed tracking-barlow-condensed-sm md:tracking-barlow-condensed-md md:text-xl leading-[19px] text-white"
     >
@@ -20,10 +20,8 @@ import "../scss/index.scss";
       destination
     </h1>
 
-    <div
-      class="lg:grid lg:grid-cols-container lg:items-center lg:place-items-center gap-28"
-    >
-      <div class="col-start-2">
+    <div class="lg:flex lg:h-full lg:gap-40 lg:items-center lg:justify-center">
+      <div class="flex-shrink-0">
         <Picture
           class="w-[170px] h-[170px] md:h-[300px] md:w-[300px] lg:h-[445px] lg:w-[445px] object-cover mx-auto mt-6 md:mt-[60px]"
           src="/destination/image-moon.webp"
@@ -34,7 +32,7 @@ import "../scss/index.scss";
         />
       </div>
 
-      <div>
+      <div class="lg:max-w-[445px]">
         <div
           class="gap-6 flex text-secondary justify-center mt-6 md:mt-14 pb-2 col-start-2 lg:justify-start"
         >
