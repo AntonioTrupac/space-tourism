@@ -2,10 +2,6 @@
 import Layout from "src/layouts/Layout.astro";
 import { Picture } from "@astrojs/image/components";
 import "../scss/index.scss";
-// import data from "../data/data.json";
-
-// const { destinations } = data;
-// const MOON = "Moon";
 ---
 
 <Layout
@@ -14,16 +10,18 @@ import "../scss/index.scss";
 >
   <main id="main" class="lg:overflow-hidden">
     <h1
-      class="mt-6 md:mt-10 text-center md:text-left md:px-destination-title uppercase font-barlow-condensed tracking-barlow-condensed-sm md:tracking-barlow-condensed-md md:text-xl leading-[19px] text-white"
+      class="mt-6 md:mt-10 text-center lg:px-navClamp md:text-left md:px-destination-title uppercase font-barlow-condensed tracking-barlow-condensed-sm md:tracking-barlow-condensed-md md:text-xl leading-[19px] lg:text-[28px] lg:leading-[34px] lg:tracking-barlow-condensed-lg text-white"
     >
       <span class="mr-[18px] font-bold text-white/30">01</span>Pick your
       destination
     </h1>
 
-    <div class="lg:flex lg:h-full lg:gap-40 lg:items-center lg:justify-center">
+    <div
+      class="lg:flex lg:h-full lg:gap-40 2xl:gap-52 lg:items-center lg:justify-center"
+    >
       <div class="flex-shrink-0">
         <Picture
-          class="w-[170px] h-[170px] md:h-[300px] md:w-[300px] lg:h-[445px] lg:w-[445px] object-cover mx-auto mt-6 md:mt-[60px]"
+          class="w-[170px] h-[170px] md:h-[300px] md:w-[300px] lg:h-[445px] lg:w-[445px] object-cover mx-auto mt-6 lg:mt-0 md:mt-[60px]"
           src="/destination/image-moon.webp"
           alt="The moon"
           widths={[170, 400, 445]}
@@ -34,24 +32,28 @@ import "../scss/index.scss";
 
       <div class="lg:max-w-[445px]">
         <div
-          class="gap-6 flex text-secondary justify-center mt-6 md:mt-14 pb-2 col-start-2 lg:justify-start"
+          class="gap-6 flex text-secondary justify-center mt-6 lg:mt-0 md:mt-14 pb-2 col-start-2 lg:justify-start"
         >
           <button
+            id="moon"
             aria-selected="true"
             class="uppercase border-transparent border-b-[3px] md:text-base md:leading-7 aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
             >Moon</button
           >
           <button
+            id="mars"
             aria-selected="false"
             class="uppercase border-transparent border-b-[3px] md:text-base md:leading-7 aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
             >Mars</button
           >
           <button
+            id="europa"
             aria-selected="false"
             class="uppercase border-transparent border-b-[3px] md:text-base md:leading-7 aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
             >Europa</button
           >
           <button
+            id="titan"
             aria-selected="false"
             class="uppercase border-transparent border-b-[3px] md:text-base md:leading-7 aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
             >Titan</button
@@ -62,13 +64,13 @@ import "../scss/index.scss";
           class="text-center lg:text-left px-6 mt-5 md:mt-8 md:px-destination-body lg:px-0"
         >
           <h2
-            class="font-bellefair uppercase text-[56px] leading-[64px] md:text-[80px] md:leading-[92px] text-white"
+            class="font-bellefair uppercase text-[56px] leading-[64px] md:text-[80px] md:leading-[92px] lg:text-[100px] lg:leading-[115px] text-white"
           >
             Moon
           </h2>
 
           <p
-            class="font-barlow text-secondary text-[15px] leading-[25px] md:text-base md:leading-7"
+            class="font-barlow text-secondary text-[15px] leading-[25px] md:text-base md:leading-7 lg:text-lg lg:leading-8"
           >
             See our planet as you’ve never seen it before. A perfect relaxing
             trip away to help regain perspective and come back refreshed. While
@@ -89,6 +91,7 @@ import "../scss/index.scss";
                 Avg. distance
               </h3>
               <p
+                id="distance"
                 class="font-bellefair text-[28px] uppercase leading-8 text-white"
               >
                 384,400 km
@@ -102,6 +105,7 @@ import "../scss/index.scss";
                 Est. travel time
               </h3>
               <p
+                id="time"
                 class="font-bellefair text-[28px] uppercase leading-8 text-white"
               >
                 3 days
@@ -113,3 +117,90 @@ import "../scss/index.scss";
     </div>
   </main>
 </Layout>
+
+<script>
+  import data from "../data/data.json";
+  const MARS = "mars";
+  const MOON = "moon";
+  const EUROPA = "europa";
+  const TITAN = "titan";
+
+  const { destinations } = data;
+
+  const moonButton = document.getElementById("moon");
+  const marsButton = document.getElementById("mars");
+  const europaButton = document.getElementById("europa");
+  const titanButton = document.getElementById("titan");
+
+  moonButton &&
+    moonButton.addEventListener("click", () => {
+      changeDestination(MOON);
+      if (moonButton) {
+        moonButton.setAttribute("aria-selected", "true");
+        marsButton && marsButton.setAttribute("aria-selected", "false");
+        europaButton && europaButton.setAttribute("aria-selected", "false");
+        titanButton && titanButton.setAttribute("aria-selected", "false");
+      }
+    });
+
+  marsButton &&
+    marsButton.addEventListener("click", () => {
+      changeDestination(MARS);
+
+      if (marsButton) {
+        marsButton.setAttribute("aria-selected", "true");
+        moonButton && moonButton.setAttribute("aria-selected", "false");
+        europaButton && europaButton.setAttribute("aria-selected", "false");
+        titanButton && titanButton.setAttribute("aria-selected", "false");
+      }
+    });
+
+  europaButton &&
+    europaButton.addEventListener("click", () => {
+      changeDestination(EUROPA);
+
+      if (europaButton) {
+        europaButton.setAttribute("aria-selected", "true");
+        moonButton && moonButton.setAttribute("aria-selected", "false");
+        marsButton && marsButton.setAttribute("aria-selected", "false");
+        titanButton && titanButton.setAttribute("aria-selected", "false");
+      }
+    });
+
+  titanButton &&
+    titanButton.addEventListener("click", () => {
+      changeDestination(TITAN);
+
+      if (titanButton) {
+        titanButton.setAttribute("aria-selected", "true");
+        moonButton && moonButton.setAttribute("aria-selected", "false");
+        marsButton && marsButton.setAttribute("aria-selected", "false");
+        europaButton && europaButton.setAttribute("aria-selected", "false");
+      }
+    });
+
+  const changeDestination = (buttonId: string) => {
+    const destination = destinations.find(
+      (d) => d.name.toLowerCase() === buttonId
+    );
+
+    const title = document.querySelector("h2");
+    const image = document.querySelector("picture");
+    const body = document.querySelector("p");
+    const distance = document.querySelector("#distance");
+    const time = document.querySelector("#time");
+
+    // set image src in picture element
+    const imageSrc = image?.querySelector("source");
+
+    if (title && image && body && distance && time && destination && imageSrc) {
+      title.textContent = destination.name;
+      imageSrc.src = destination.images.webp;
+      body.textContent = destination.description;
+      distance.textContent = destination.distance;
+      time.textContent = destination.travel;
+
+      console.log(imageSrc);
+    }
+  };
+</script>
