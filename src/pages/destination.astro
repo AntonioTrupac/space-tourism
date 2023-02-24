@@ -195,12 +195,10 @@ import "../scss/index.scss";
 
     if (title && image && body && distance && time && destination && imageSrc) {
       title.textContent = destination.name;
-      imageSrc.src = destination.images.webp;
+      imageSrc.srcset = destination.images.webp;
       body.textContent = destination.description;
       distance.textContent = destination.distance;
       time.textContent = destination.travel;
-
-      console.log(imageSrc);
     }
   };
 </script>
