@@ -8,7 +8,7 @@ import "../scss/index.scss";
   title="Destination"
   className="bg-destination-mobile md:bg-destination-tablet md:bg-center lg:bg-destination-desktop"
 >
-  <main id="main" class="lg:overflow-hidden">
+  <main id="main" class="lg:overflow-hidden lg:px-6">
     <h1
       class="mt-6 md:mt-10 text-center lg:px-navClamp md:text-left md:px-destination-title uppercase font-barlow-condensed tracking-barlow-condensed-sm md:tracking-barlow-condensed-md md:text-xl leading-[19px] lg:text-[28px] lg:leading-[34px] lg:tracking-barlow-condensed-lg text-white"
     >
@@ -32,28 +32,33 @@ import "../scss/index.scss";
 
       <div class="lg:max-w-[445px]">
         <div
+          role="tablist"
           class="gap-6 flex text-secondary justify-center mt-6 lg:mt-0 md:mt-14 pb-2 col-start-2 lg:justify-start"
         >
           <button
             id="moon"
+            role="tab"
             aria-selected="true"
             class="uppercase border-transparent border-b-[3px] md:text-base md:leading-7 aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
             >Moon</button
           >
           <button
             id="mars"
+            role="tab"
             aria-selected="false"
             class="uppercase border-transparent border-b-[3px] md:text-base md:leading-7 aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
             >Mars</button
           >
           <button
             id="europa"
+            role="tab"
             aria-selected="false"
             class="uppercase border-transparent border-b-[3px] md:text-base md:leading-7 aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
             >Europa</button
           >
           <button
             id="titan"
+            role="tab"
             aria-selected="false"
             class="uppercase border-transparent border-b-[3px] md:text-base md:leading-7 aria-selected:border-white aria-selected:border-b-[3px] aria-selected:text-white pb-2"
             >Titan</button
@@ -190,7 +195,6 @@ import "../scss/index.scss";
     const distance = document.querySelector("#distance");
     const time = document.querySelector("#time");
 
-    // set image src in picture element
     const imageSrc = image?.querySelector("source");
 
     if (title && image && body && distance && time && destination && imageSrc) {

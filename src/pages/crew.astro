@@ -1,0 +1,56 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { Picture } from "@astrojs/image/components";
+import "../scss/index.scss";
+---
+
+<Layout
+  title="Crew"
+  className="bg-crew-mobile md:bg-crew-tablet lg:bg-crew-desktop md:bg-center"
+>
+  <main class="">
+    <h1
+      class="mt-6 md:mt-10 text-center lg:px-navClamp md:text-left md:px-destination-title uppercase font-barlow-condensed tracking-barlow-condensed-sm md:tracking-barlow-condensed-md md:text-xl leading-[19px] lg:text-[28px] lg:leading-[34px] lg:tracking-barlow-condensed-lg text-white"
+    >
+      <span class="mr-[18px] font-bold text-white/30">02</span>Meet your crew
+    </h1>
+
+    <div class="flex-shrink-0">
+      <Picture
+        class="w-[177px] md:h-[300px] md:w-[300px] lg:h-[445px] lg:w-[445px] object-cover mx-auto mt-6 lg:mt-0 md:mt-[60px]"
+        src="/crew/image-douglas-hurley.webp"
+        alt="The moon"
+        widths={[170, 400, 445]}
+        sizes="(min-width: 1024px) 1024px, 100vw"
+        aspectRatio={0.8}
+      />
+    </div>
+
+    <div role="tablist">
+      <button
+        role="tab"
+        aria-selected="true"
+        class="w-2 h-2 rounded-full border-2 border-transparent bg-secondary focus:outline-none focus:border-secondary"
+      >
+      </button>
+      <button
+        role="tab"
+        aria-selected="false"
+        class="w-2 h-2 rounded-full border-2 border-transparent bg-secondary focus:outline-none focus:border-secondary"
+      >
+      </button>
+      <button
+        role="tab"
+        aria-selected="false"
+        class="w-2 h-2 rounded-full border-2 border-transparent bg-secondary focus:outline-none focus:border-secondary"
+      >
+      </button>
+      <button
+        role="tab"
+        aria-selected="false"
+        class="w-2 h-2 rounded-full border-2 border-transparent bg-secondary focus:outline-none focus:border-secondary"
+      >
+      </button>
+    </div>
+  </main>
+</Layout>
