@@ -107,12 +107,12 @@ const currentPath = pathname.slice(1);
 
   if (mobileNavToggle && primaryNav) {
     mobileNavToggle.addEventListener("click", () => {
-      const visiblity = primaryNav.getAttribute("data-visible");
+      const visibility = primaryNav.getAttribute("data-visible");
 
-      if (visiblity === "false") {
+      if (visibility === "false") {
         primaryNav.setAttribute("data-visible", "true");
         mobileNavToggle.setAttribute("aria-expanded", "true");
-      } else if (visiblity === "true") {
+      } else if (visibility === "true") {
         primaryNav.setAttribute("data-visible", "false");
         mobileNavToggle.setAttribute("aria-expanded", "false");
       }

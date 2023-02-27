@@ -6,51 +6,78 @@ import "../scss/index.scss";
 
 <Layout
   title="Crew"
-  className="bg-crew-mobile md:bg-crew-tablet lg:bg-crew-desktop md:bg-center"
+  className="bg-crew-mobile md:bg-crew-tablet lg:bg-crew-desktop md:bg-center md:overflow-hidden"
 >
-  <main class="">
+  <main class="flex flex-col md:justify-between lg:grid grid-cols-2 mt-[62px]">
     <h1
-      class="mt-6 md:mt-10 text-center lg:px-navClamp md:text-left md:px-destination-title uppercase font-barlow-condensed tracking-barlow-condensed-sm md:tracking-barlow-condensed-md md:text-xl leading-[19px] lg:text-[28px] lg:leading-[34px] lg:tracking-barlow-condensed-lg text-white"
+      class="mt-6 md:mt-10 lg:mt-0 text-center lg:px-navClamp md:text-left md:px-destination-title uppercase font-barlow-condensed tracking-barlow-condensed-sm md:tracking-barlow-condensed-md md:text-xl leading-[19px] lg:text-[28px] lg:leading-[34px] lg:tracking-barlow-condensed-lg text-white"
     >
       <span class="mr-[18px] font-bold text-white/30">02</span>Meet your crew
     </h1>
 
-    <div class="flex-shrink-0">
+    <div
+      class="flex flex-col items-center mt-8 lg:mt-0 md:mt-0 md:order-2 lg:col-start-2 lg:row-span-2 lg:place-content-end lg:place-items-start px-6 lg:px-0"
+    >
       <Picture
-        class="w-[177px] md:h-[300px] md:w-[300px] lg:h-[445px] lg:w-[445px] object-cover mx-auto mt-6 lg:mt-0 md:mt-[60px]"
+        class="w-[177px] flex-shrink-0 md:w-[456px] lg:w-[568px] md:mb-[-30px] lg:mb-0"
         src="/crew/image-douglas-hurley.webp"
         alt="The moon"
         widths={[170, 400, 445]}
         sizes="(min-width: 1024px) 1024px, 100vw"
         aspectRatio={0.8}
       />
+
+      <div class="h-[1px] w-full bg-secondary/20 md:hidden"></div>
     </div>
 
-    <div role="tablist">
-      <button
-        role="tab"
-        aria-selected="true"
-        class="w-2 h-2 rounded-full border-2 border-transparent bg-secondary focus:outline-none focus:border-secondary"
-      >
-      </button>
-      <button
-        role="tab"
-        aria-selected="false"
-        class="w-2 h-2 rounded-full border-2 border-transparent bg-secondary focus:outline-none focus:border-secondary"
-      >
-      </button>
-      <button
-        role="tab"
-        aria-selected="false"
-        class="w-2 h-2 rounded-full border-2 border-transparent bg-secondary focus:outline-none focus:border-secondary"
-      >
-      </button>
-      <button
-        role="tab"
-        aria-selected="false"
-        class="w-2 h-2 rounded-full border-2 border-transparent bg-secondary focus:outline-none focus:border-secondary"
-      >
-      </button>
+    <div
+      class="flex flex-col items-center lg:items-start px-6 md:px-0 md:max-w-[458px] self-center lg:col-start-1 lg:place-content-center lg:place-items-center lg:row-start-2"
+    >
+      <div role="tablist" class="mt-8 md:mt-10 md:order-2">
+        <button
+          role="tab"
+          aria-selected="true"
+          class="w-[10px] h-[10px] mr-4 rounded-full border-2 border-transparent bg-secondary/20 focus:outline-none focus:border-secondary aria-selected:border-white aria-selected:bg-white"
+        >
+        </button>
+        <button
+          role="tab"
+          aria-selected="false"
+          class="w-[10px] h-[10px] mr-4 rounded-full border-2 border-transparent bg-secondary/20 focus:outline-none focus:border-secondary aria-selected:border-white aria-selected:bg-white"
+        >
+        </button>
+        <button
+          role="tab"
+          aria-selected="false"
+          class="w-[10px] h-[10px] mr-4 rounded-full border-2 border-transparent bg-secondary/20 focus:outline-none focus:border-secondary aria-selected:border-white aria-selected:bg-white"
+        >
+        </button>
+        <button
+          role="tab"
+          aria-selected="false"
+          class="w-[10px] h-[10px] rounded-full border-2 border-transparent bg-secondary/20 focus:outline-none focus:border-secondary aria-selected:border-white aria-selected:bg-white"
+        >
+        </button>
+      </div>
+
+      <div class="mt-8 text-center lg:text-left">
+        <h2
+          class="uppercase font-bellefair leading-[18px] md:text-2xl md:leading-[28px] text-white/50"
+        >
+          Commander <span
+            class="block text-2xl mt-2 text-white md:text-[40px] md:leading-[46px] leading-[28px]"
+            >Douglas Hurley</span
+          >
+        </h2>
+
+        <p
+          class="text-secondary font-barlow text-[15px] leading-[25px] md:text-base md:leading-7 mt-4"
+        >
+          Douglas Gerald Hurley is an American engineer, former Marine Corps
+          pilot and former NASA astronaut. He launched into space for the third
+          time as commander of Crew Dragon Demo-2.
+        </p>
+      </div>
     </div>
   </main>
 </Layout>
