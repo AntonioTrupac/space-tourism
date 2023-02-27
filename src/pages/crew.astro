@@ -8,15 +8,17 @@ import "../scss/index.scss";
   title="Crew"
   className="bg-crew-mobile md:bg-crew-tablet lg:bg-crew-desktop md:bg-center md:overflow-hidden"
 >
-  <main class="flex flex-col md:justify-between lg:grid grid-cols-2 mt-[62px]">
+  <main
+    class="flex flex-col md:justify-between lg:grid grid-cols-crew mt-[62px]"
+  >
     <h1
-      class="mt-6 md:mt-10 lg:mt-0 text-center lg:px-navClamp md:text-left md:px-destination-title uppercase font-barlow-condensed tracking-barlow-condensed-sm md:tracking-barlow-condensed-md md:text-xl leading-[19px] lg:text-[28px] lg:leading-[34px] lg:tracking-barlow-condensed-lg text-white"
+      class="mt-6 md:mt-10 lg:mt-0 text-center lg:place-items-center md:text-left md:px-destination-title lg:px-0 uppercase font-barlow-condensed tracking-barlow-condensed-sm md:tracking-barlow-condensed-md md:text-xl leading-[19px] lg:text-[28px] lg:leading-[34px] lg:tracking-barlow-condensed-lg text-white lg:col-start-2"
     >
       <span class="mr-[18px] font-bold text-white/30">02</span>Meet your crew
     </h1>
 
     <div
-      class="flex flex-col items-center mt-8 lg:mt-0 md:mt-0 md:order-2 lg:col-start-2 lg:row-span-2 lg:place-content-end lg:place-items-start px-6 lg:px-0"
+      class="flex flex-col items-center mt-8 lg:mt-0 md:mt-0 md:order-2 lg:col-start-3 lg:row-span-2 lg:place-content-end lg:place-items-end px-6 lg:pl-8 xl:pl-0 flex-shrink-0"
     >
       <Picture
         class="w-[177px] flex-shrink-0 md:w-[456px] lg:w-[568px] md:mb-[-30px] lg:mb-0"
@@ -31,9 +33,9 @@ import "../scss/index.scss";
     </div>
 
     <div
-      class="flex flex-col items-center lg:items-start px-6 md:px-0 md:max-w-[458px] self-center lg:col-start-1 lg:place-content-center lg:place-items-center lg:row-start-2"
+      class="flex flex-col items-center lg:items-start px-6 md:px-0 md:max-w-[458px] lg:max-w-none lg:col-start-2 lg:place-content-start lg:place-items-center lg:row-start-2 lg:mx-auto"
     >
-      <div role="tablist" class="mt-8 md:mt-10 md:order-2">
+      <div role="tablist" class="mt-8 md:mt-10 md:order-2 lg:mt-[120px]">
         <button
           role="tab"
           aria-selected="true"
@@ -60,18 +62,18 @@ import "../scss/index.scss";
         </button>
       </div>
 
-      <div class="mt-8 text-center lg:text-left">
+      <div class="mt-8 lg:mt-0 text-center lg:text-left">
         <h2
-          class="uppercase font-bellefair leading-[18px] md:text-2xl md:leading-[28px] text-white/50"
+          class="uppercase font-bellefair leading-[18px] md:text-2xl md:leading-[28px] lg:text-[32px] lg:leading-[37px] text-white/50"
         >
           Commander <span
-            class="block text-2xl mt-2 text-white md:text-[40px] md:leading-[46px] leading-[28px]"
+            class="block text-2xl leading-[28px] mt-2 text-white md:text-[40px] md:leading-[46px] lg:text-[56px] lg:leading-[64px] lg:mt-5"
             >Douglas Hurley</span
           >
         </h2>
 
         <p
-          class="text-secondary font-barlow text-[15px] leading-[25px] md:text-base md:leading-7 mt-4"
+          class="text-secondary font-barlow text-[15px] leading-[25px] md:text-base md:leading-7 lg:text-lg lg:leading-[32px] lg:pr-10 mt-4 lg:mt-6"
         >
           Douglas Gerald Hurley is an American engineer, former Marine Corps
           pilot and former NASA astronaut. He launched into space for the third
