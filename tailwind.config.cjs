@@ -25,6 +25,12 @@ module.exports = {
         "crew-mobile": "url('/crew/background-crew-mobile.jpg')",
         "crew-tablet": "url('/crew/background-crew-tablet.jpg')",
         "crew-desktop": "url('/crew/background-crew-desktop.jpg')",
+        "technology-mobile":
+          "url('/technology/background-technology-mobile.jpg')",
+        "technology-tablet":
+          "url('/technology/background-technology-tablet.jpg')",
+        "technology-desktop":
+          "url('/technology/background-technology-desktop.jpg')",
       },
       fontFamily: {
         "barlow-condensed": ["Barlow Condensed", "sans-serif"],

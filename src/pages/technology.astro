@@ -1,0 +1,28 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { Picture } from "@astrojs/image/components";
+
+import "../scss/index.scss";
+---
+
+<Layout
+  className="bg-technology-mobile md:bg-technology-tablet lg:bg-technology-desktop md:bg-center"
+  title="Technology"
+>
+  <main>
+    <h1
+      class="mt-6 text-center uppercase font-barlow-condensed tracking-barlow-condensed-sm leading-[19px] text-white"
+    >
+      <span class="mr-[18px] font-bold text-white/30">03</span>Space launch 101
+    </h1>
+
+    <Picture
+      class="w-full flex-shrink-0 mt-8 md:hidden"
+      src="/technology/image-launch-vehicle-landscape.jpg"
+      alt="The moon"
+      widths={[170, 400, 445]}
+      sizes="(min-width: 1024px) 1024px, 100vw"
+      aspectRatio={2.14}
+    />
+  </main>
+</Layout>
