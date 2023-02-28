@@ -51,7 +51,10 @@ module.exports = {
       gridTemplateColumns: {
         container:
           "minmax(2rem, 1fr) repeat(2, minmax(0, 600px)) minmax(2rem, 1fr)",
-        crew: "minmax(1.5rem, 1fr) minmax(0,490px) minmax(0, 700px) minmax(1.5rem, 1fr)",
+        crew: "minmax(1.5rem, 1fr) minmax(0, 490px) minmax(0, 620px) minmax(1.5rem, 1fr)",
+        technology: "minmax(1.5rem, 1fr) minmax(0, 630px) minmax(0, 645px)",
+        "technlogy-xl":
+          "minmax(1.5rem, 1fr) minmax(0, 630px) minmax(0, 600px) minmax(1.5rem, 1fr)",
       },
       padding: {
         grid: "max(6rem, 20vh)",
