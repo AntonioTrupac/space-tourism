@@ -16,13 +16,54 @@ import "../scss/index.scss";
       <span class="mr-[18px] font-bold text-white/30">03</span>Space launch 101
     </h1>
 
-    <Picture
-      class="w-full flex-shrink-0 mt-8 md:hidden"
-      src="/technology/image-launch-vehicle-landscape.jpg"
-      alt="The moon"
-      widths={[170, 400, 445]}
-      sizes="(min-width: 1024px) 1024px, 100vw"
-      aspectRatio={2.14}
-    />
+    <div class="flex items-center justify-center">
+      <Picture
+        class="w-full mt-8 md:hidden"
+        src="/technology/image-launch-vehicle-landscape.jpg"
+        alt="The moon"
+        widths={[400, 445]}
+        sizes="(min-width: 1024px) 1024px, 100vw"
+        aspectRatio={2.21}
+      />
+    </div>
+
+    <div class="flex flex-col items-center mt-8">
+      <div role="tablist" class="font-bellefair leading-[18px]">
+        <button
+          aria-selected="true"
+          class="rounded-full mr-4 aria-selected:bg-white aria-selected:text-primary h-10 w-10 bg-transparent text-white border-[1px] border-white/25"
+          >1</button
+        >
+        <button
+          aria-selected="false"
+          class="rounded-full mr-4 aria-selected:bg-white aria-selected:text-primary h-10 w-10 bg-transparent text-white border-[1px] border-white/25"
+          >2</button
+        >
+        <button
+          aria-selected="false"
+          class="rounded-full aria-selected:bg-white aria-selected:text-primary h-10 w-10 bg-transparent text-white border-[1px] border-white/25"
+          >3</button
+        >
+      </div>
+
+      <div class="text-center px-6">
+        <h2
+          class="font-barlow-condensed text-secondary text-sm leading-[17px] tracking-[2.36px] mt-6 uppercase"
+        >
+          The terminology... <span
+            class="font-bellefair block text-2xl mt-2 text-tertiary"
+            >LAUNCH VEHICLE</span
+          >
+        </h2>
+
+        <p class="font-barlow text-[15px] text-secondary leading-[25px] mt-4">
+          A launch vehicle or carrier rocket is a rocket-propelled vehicle used
+          to carry a payload from Earth's surface to space, usually to Earth
+          orbit or beyond. Our WEB-X carrier rocket is the most powerful in
+          operation. Standing 150 metres tall, it's quite an awe-inspiring sight
+          on the launch pad!
+        </p>
+      </div>
+    </div>
   </main>
 </Layout>
