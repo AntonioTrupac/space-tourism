@@ -93,6 +93,7 @@ import "../scss/index.scss";
 
 <script>
   import data from "../data/data.json";
+  import { changeAriaSelected } from "../util";
 
   const { technology } = data;
 
@@ -135,8 +136,6 @@ import "../scss/index.scss";
     const portraitImage = document.querySelector("#portrait");
     const description = document.querySelector("p");
 
-    console.log(portraitImage);
-
     const landscapeImageSrc = landscapeImage?.querySelector("source");
     const portraitImageSrc = portraitImage?.querySelector("source");
 
@@ -154,17 +153,5 @@ import "../scss/index.scss";
         portraitImageSrc.srcset = tech.images.portrait;
       }
     }
-  }
-
-  function changeAriaSelected(buttonId: string) {
-    const buttons = document.querySelectorAll("[aria-selected]");
-
-    buttons.forEach((button) => {
-      if (button.id === buttonId) {
-        button.setAttribute("aria-selected", "true");
-      } else {
-        button.setAttribute("aria-selected", "false");
-      }
-    });
   }
 </script>

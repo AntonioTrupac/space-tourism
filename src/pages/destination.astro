@@ -125,6 +125,8 @@ import "../scss/index.scss";
 
 <script>
   import data from "../data/data.json";
+  import { changeAriaSelected } from "../util";
+
   const MARS = "mars";
   const MOON = "moon";
   const EUROPA = "europa";
@@ -132,56 +134,30 @@ import "../scss/index.scss";
 
   const { destinations } = data;
 
-  const moonButton = document.getElementById("moon");
-  const marsButton = document.getElementById("mars");
-  const europaButton = document.getElementById("europa");
-  const titanButton = document.getElementById("titan");
+  const moonButton = document.getElementById(MOON);
+  const marsButton = document.getElementById(MARS);
+  const europaButton = document.getElementById(EUROPA);
+  const titanButton = document.getElementById(TITAN);
 
-  moonButton &&
-    moonButton.addEventListener("click", () => {
-      changeDestination(MOON);
-      if (moonButton) {
-        moonButton.setAttribute("aria-selected", "true");
-        marsButton && marsButton.setAttribute("aria-selected", "false");
-        europaButton && europaButton.setAttribute("aria-selected", "false");
-        titanButton && titanButton.setAttribute("aria-selected", "false");
-      }
-    });
+  moonButton?.addEventListener("click", () => {
+    changeDestination(moonButton.id);
+    changeAriaSelected(moonButton.id);
+  });
 
-  marsButton &&
-    marsButton.addEventListener("click", () => {
-      changeDestination(MARS);
+  marsButton?.addEventListener("click", () => {
+    changeDestination(marsButton.id);
+    changeAriaSelected(marsButton.id);
+  });
 
-      if (marsButton) {
-        marsButton.setAttribute("aria-selected", "true");
-        moonButton && moonButton.setAttribute("aria-selected", "false");
-        europaButton && europaButton.setAttribute("aria-selected", "false");
-        titanButton && titanButton.setAttribute("aria-selected", "false");
-      }
-    });
-
-  europaButton &&
-    europaButton.addEventListener("click", () => {
-      changeDestination(EUROPA);
-
-      if (europaButton) {
-        europaButton.setAttribute("aria-selected", "true");
-        moonButton && moonButton.setAttribute("aria-selected", "false");
-        marsButton && marsButton.setAttribute("aria-selected", "false");
-        titanButton && titanButton.setAttribute("aria-selected", "false");
-      }
-    });
+  europaButton?.addEventListener("click", () => {
+    changeDestination(europaButton.id);
+    changeAriaSelected(europaButton.id);
+  });
 
   titanButton &&
     titanButton.addEventListener("click", () => {
-      changeDestination(TITAN);
-
-      if (titanButton) {
-        titanButton.setAttribute("aria-selected", "true");
-        moonButton && moonButton.setAttribute("aria-selected", "false");
-        marsButton && marsButton.setAttribute("aria-selected", "false");
-        europaButton && europaButton.setAttribute("aria-selected", "false");
-      }
+      changeDestination(titanButton.id);
+      changeAriaSelected(titanButton.id);
     });
 
   function changeDestination(buttonId: string) {

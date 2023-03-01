@@ -92,6 +92,7 @@ import "../scss/index.scss";
 
 <script>
   import data from "../data/data.json";
+  import { changeAriaSelected } from "../util";
 
   const { crew } = data;
 
@@ -100,61 +101,34 @@ import "../scss/index.scss";
   const missionSpecialistButton = document.getElementById("mission-specialist");
   const flightEngineerButton = document.getElementById("flight-engineer");
 
-  commanderButton &&
-    commanderButton.addEventListener("click", () => {
-      if (commanderButton.getAttribute("aria-selected") === "true") return;
+  commanderButton?.addEventListener("click", () => {
+    if (commanderButton.getAttribute("aria-selected") === "true") return;
 
-      changeCrewMember(commanderButton.id);
+    changeCrewMember(commanderButton.id);
+    changeAriaSelected(commanderButton.id);
+  });
 
-      commanderButton.setAttribute("aria-selected", "true");
-      pilotButton && pilotButton.setAttribute("aria-selected", "false");
-      missionSpecialistButton &&
-        missionSpecialistButton.setAttribute("aria-selected", "false");
-      flightEngineerButton &&
-        flightEngineerButton.setAttribute("aria-selected", "false");
-    });
+  pilotButton?.addEventListener("click", () => {
+    if (pilotButton.getAttribute("aria-selected") === "true") return;
 
-  pilotButton &&
-    pilotButton.addEventListener("click", () => {
-      if (pilotButton.getAttribute("aria-selected") === "true") return;
+    changeCrewMember(pilotButton.id);
+    changeAriaSelected(pilotButton.id);
+  });
 
-      changeCrewMember(pilotButton.id);
-      console.log(pilotButton.id);
+  missionSpecialistButton?.addEventListener("click", () => {
+    if (missionSpecialistButton.getAttribute("aria-selected") === "true")
+      return;
 
-      pilotButton.setAttribute("aria-selected", "true");
-      commanderButton && commanderButton.setAttribute("aria-selected", "false");
-      missionSpecialistButton &&
-        missionSpecialistButton.setAttribute("aria-selected", "false");
-      flightEngineerButton &&
-        flightEngineerButton.setAttribute("aria-selected", "false");
-    });
+    changeCrewMember(missionSpecialistButton.id);
+    changeAriaSelected(missionSpecialistButton.id);
+  });
 
-  missionSpecialistButton &&
-    missionSpecialistButton.addEventListener("click", () => {
-      if (missionSpecialistButton.getAttribute("aria-selected") === "true")
-        return;
+  flightEngineerButton?.addEventListener("click", () => {
+    if (flightEngineerButton.getAttribute("aria-selected") === "true") return;
 
-      changeCrewMember(missionSpecialistButton.id);
-
-      missionSpecialistButton.setAttribute("aria-selected", "true");
-      commanderButton && commanderButton.setAttribute("aria-selected", "false");
-      pilotButton && pilotButton.setAttribute("aria-selected", "false");
-      flightEngineerButton &&
-        flightEngineerButton.setAttribute("aria-selected", "false");
-    });
-
-  flightEngineerButton &&
-    flightEngineerButton.addEventListener("click", () => {
-      if (flightEngineerButton.getAttribute("aria-selected") === "true") return;
-
-      changeCrewMember(flightEngineerButton.id);
-
-      flightEngineerButton.setAttribute("aria-selected", "true");
-      commanderButton && commanderButton.setAttribute("aria-selected", "false");
-      pilotButton && pilotButton.setAttribute("aria-selected", "false");
-      missionSpecialistButton &&
-        missionSpecialistButton.setAttribute("aria-selected", "false");
-    });
+    changeCrewMember(flightEngineerButton.id);
+    changeAriaSelected(flightEngineerButton.id);
+  });
 
   function changeCrewMember(buttonId: string) {
     if (buttonId.includes("-")) {
