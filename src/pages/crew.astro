@@ -23,7 +23,7 @@ import "../scss/index.scss";
     >
       <Picture
         class="w-[177px] flex-shrink-0 md:w-[456px] lg:w-[568px] md:mb-[-30px] lg:mb-0"
-        src="/crew/image-douglas-hurley.webp"
+        src="/crew/image-douglas-hurley.png"
         alt="The moon"
         widths={[170, 400, 445]}
         sizes="(min-width: 1024px) 1024px, 100vw"
@@ -129,20 +129,55 @@ import "../scss/index.scss";
         flightEngineerButton.setAttribute("aria-selected", "false");
     });
 
+  missionSpecialistButton &&
+    missionSpecialistButton.addEventListener("click", () => {
+      if (missionSpecialistButton.getAttribute("aria-selected") === "true")
+        return;
+
+      changeCrewMember(missionSpecialistButton.id);
+
+      missionSpecialistButton.setAttribute("aria-selected", "true");
+      commanderButton && commanderButton.setAttribute("aria-selected", "false");
+      pilotButton && pilotButton.setAttribute("aria-selected", "false");
+      flightEngineerButton &&
+        flightEngineerButton.setAttribute("aria-selected", "false");
+    });
+
+  flightEngineerButton &&
+    flightEngineerButton.addEventListener("click", () => {
+      if (flightEngineerButton.getAttribute("aria-selected") === "true") return;
+
+      changeCrewMember(flightEngineerButton.id);
+
+      flightEngineerButton.setAttribute("aria-selected", "true");
+      commanderButton && commanderButton.setAttribute("aria-selected", "false");
+      pilotButton && pilotButton.setAttribute("aria-selected", "false");
+      missionSpecialistButton &&
+        missionSpecialistButton.setAttribute("aria-selected", "false");
+    });
+
   function changeCrewMember(buttonId: string) {
+    if (buttonId.includes("-")) {
+      buttonId = buttonId.replace("-", " ");
+    }
+
     const member = crew.find(
       (member) => member.role.toLowerCase() === buttonId
     );
 
     const role = document.querySelector("#crew-member");
     const memberName = role?.querySelector("span");
+    const image = document.querySelector("picture");
     const desc = document.querySelector("p");
+
+    const imageSrc = image?.querySelector("source");
 
     console.log(memberName);
 
-    if (role && memberName && desc && member) {
+    if (role && memberName && desc && imageSrc && member) {
       role.innerHTML = `${member.role} <span class="block text-2xl leading-[28px] mt-2 text-white md:text-[40px] md:leading-[46px] lg:text-[56px] lg:leading-[64px] lg:mt-5">${member.name}</span>`;
       memberName.textContent = member.name;
+      imageSrc.srcset = member.images.png;
 
       desc.textContent = member.bio;
     }
