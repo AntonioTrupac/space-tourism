@@ -18,20 +18,22 @@ import "../scss/index.scss";
       <span class="mr-[18px] font-bold text-white/30">03</span>Space launch 101
     </h1>
 
-    <Picture
-      class="mt-8 md:mt-[60px] md:h-[310px] w-full lg:hidden"
-      src="/technology/image-launch-vehicle-landscape.jpg"
-      alt="The moon"
-      widths={[400, 700]}
-      sizes="(min-width: 1024px) 1024px, 100vw"
-      aspectRatio={2.21}
-    />
+    <div id="landscape">
+      <Picture
+        class="mt-8 md:mt-[60px] md:h-[310px] w-full lg:hidden"
+        src="/technology/image-launch-vehicle-landscape.jpg"
+        alt="The moon"
+        widths={[400, 700]}
+        sizes="(min-width: 1024px) 1024px, 100vw"
+        aspectRatio={2.21}
+      />
+    </div>
 
-    <div class="lg:col-start-3 lg:row-span-2 flex justify-end">
+    <div id="portrait" class="lg:col-start-3 lg:row-span-2 flex justify-end">
       <Picture
         class="md:hidden lg:inline-block w-[515px]"
         src="/technology/image-launch-vehicle-portrait.jpg"
-        alt="The moon"
+        alt=""
         widths={[400, 700]}
         sizes="(min-width: 1024px) 1024px, 100vw"
         aspectRatio={0.97}
@@ -43,16 +45,19 @@ import "../scss/index.scss";
     >
       <div role="tablist" class="font-bellefair lg:flex lg:flex-col lg:gap-4">
         <button
+          id="launch-vehicle"
           aria-selected="true"
           class="rounded-full mr-4 lg:mr-0 aria-selected:bg-white aria-selected:text-primary h-10 w-10 md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px] bg-transparent text-white border-[1px] border-white/25 leading-[18px] md:text-2xl md:leading-7 md:tracking-[1.5px] lg:text-[32px] lg:leading-[37px] lg:tracking-[2px]"
           >1</button
         >
         <button
+          id="spaceport"
           aria-selected="false"
           class="rounded-full mr-4 lg:mr-0 aria-selected:bg-white aria-selected:text-primary h-10 w-10 md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px] bg-transparent text-white border-[1px] border-white/25 leading-[18px] md:text-2xl md:leading-7 md:tracking-[1.5px] lg:text-[32px] lg:leading-[37px] lg:tracking-[2px]"
           >2</button
         >
         <button
+          id="space-capsule"
           aria-selected="false"
           class="rounded-full aria-selected:bg-white aria-selected:text-primary h-10 w-10 md:w-[60px] md:h-[60px] lg:w-[80px] lg:h-[80px] bg-transparent text-white border-[1px] border-white/25 leading-[18px] md:text-2xl md:leading-7 md:tracking-[1.5px] lg:text-[32px] lg:leading-[37px] lg:tracking-[2px]"
           >3</button
@@ -63,6 +68,7 @@ import "../scss/index.scss";
         class="text-center lg:text-left mt-6 md:mt-11 lg:mt-0 px-6 md:px-0 md:w-[458px] lg:w-full lg:self-start"
       >
         <h2
+          id="terminology"
           class="font-barlow-condensed text-secondary text-sm leading-[17px] tracking-[2.36px] md:text-base md:leading-[19px] md:tracking-barlow-condensed-sm uppercase"
         >
           The terminology... <span
@@ -84,3 +90,81 @@ import "../scss/index.scss";
     </div>
   </main>
 </Layout>
+
+<script>
+  import data from "../data/data.json";
+
+  const { technology } = data;
+
+  const launchVehicleButton = document.getElementById("launch-vehicle");
+  const spaceportButton = document.getElementById("spaceport");
+  const spaceCapsuleButton = document.getElementById("space-capsule");
+
+  launchVehicleButton?.addEventListener("click", () => {
+    if (launchVehicleButton?.ariaSelected === "true") return;
+
+    changeTechnology(launchVehicleButton.id);
+    changeAriaSelected(launchVehicleButton.id);
+  });
+
+  spaceportButton?.addEventListener("click", () => {
+    if (spaceportButton?.ariaSelected === "true") return;
+
+    changeTechnology(spaceportButton.id);
+    changeAriaSelected(spaceportButton.id);
+  });
+
+  spaceCapsuleButton?.addEventListener("click", () => {
+    if (spaceCapsuleButton?.ariaSelected === "true") return;
+
+    changeTechnology(spaceCapsuleButton.id);
+    changeAriaSelected(spaceCapsuleButton.id);
+  });
+
+  function changeTechnology(buttonId: string) {
+    if (buttonId.includes("-")) {
+      buttonId = buttonId.replace("-", " ");
+    }
+
+    const tech = technology.find(
+      (tech) => tech.name.toLowerCase() === buttonId
+    );
+
+    const name = document.querySelector("#terminology");
+    const landscapeImage = document.querySelector("#landscape");
+    const portraitImage = document.querySelector("#portrait");
+    const description = document.querySelector("p");
+
+    console.log(portraitImage);
+
+    const landscapeImageSrc = landscapeImage?.querySelector("source");
+    const portraitImageSrc = portraitImage?.querySelector("source");
+
+    if (name && description && tech) {
+      name.innerHTML = `
+        The terminology... <span class="font-bellefair block tracking-normal text-2xl md:text-[40px] md:leading-[46px] mt-2 md:mt-4 lg:text-[56px] lg:leading-[64px] text-tertiary">${tech.name}</span>
+      `;
+      description.textContent = tech.description;
+
+      if (landscapeImageSrc) {
+        landscapeImageSrc.srcset = tech.images.landscape;
+      }
+
+      if (portraitImageSrc) {
+        portraitImageSrc.srcset = tech.images.portrait;
+      }
+    }
+  }
+
+  function changeAriaSelected(buttonId: string) {
+    const buttons = document.querySelectorAll("[aria-selected]");
+
+    buttons.forEach((button) => {
+      if (button.id === buttonId) {
+        button.setAttribute("aria-selected", "true");
+      } else {
+        button.setAttribute("aria-selected", "false");
+      }
+    });
+  }
+</script>
