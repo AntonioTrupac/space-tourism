@@ -10,7 +10,7 @@ import "../scss/index.scss";
 >
   <main id="main" class="lg:overflow-hidden lg:px-6 pb-6 md:pb-0">
     <h1
-      class="mt-6 md:mt-10 text-center lg:px-navClamp md:text-left md:px-destination-title uppercase font-barlow-condensed tracking-barlow-condensed-sm md:tracking-barlow-condensed-md md:text-xl leading-[19px] lg:text-[28px] lg:leading-[34px] lg:tracking-barlow-condensed-lg text-white"
+      class="mt-6 md:mt-10 lg:mt-4 text-center lg:px-navClamp md:text-left md:px-destination-title uppercase font-barlow-condensed tracking-barlow-condensed-sm md:tracking-barlow-condensed-md md:text-xl leading-[19px] lg:text-[28px] lg:leading-[34px] lg:tracking-barlow-condensed-lg text-white"
     >
       <span class="mr-[18px] font-bold text-white/30">01</span>Pick your
       destination
@@ -21,7 +21,7 @@ import "../scss/index.scss";
     >
       <div class="flex-shrink-0">
         <Picture
-          class="w-[170px] h-[170px] md:h-[300px] md:w-[300px] lg:h-[445px] lg:w-[445px] object-cover mx-auto mt-6 lg:mt-0 md:mt-[60px]"
+          class="w-[170px] h-[170px] md:h-[300px] md:w-[300px] lg:h-[445px] lg:w-[445px] mx-auto mt-6 lg:mt-0 md:mt-[60px]"
           src="/destination/image-moon.webp"
           alt="The moon"
           widths={[170, 400, 445]}
@@ -184,7 +184,7 @@ import "../scss/index.scss";
       }
     });
 
-  const changeDestination = (buttonId: string) => {
+  function changeDestination(buttonId: string) {
     const destination = destinations.find(
       (d) => d.name.toLowerCase() === buttonId
     );
@@ -204,5 +204,5 @@ import "../scss/index.scss";
       distance.textContent = destination.distance;
       time.textContent = destination.travel;
     }
-  };
+  }
 </script>
