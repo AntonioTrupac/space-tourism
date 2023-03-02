@@ -146,8 +146,6 @@ import "../scss/index.scss";
 
     const imageSrc = image?.querySelector("source");
 
-    console.log(memberName);
-
     if (role && memberName && desc && imageSrc && member) {
       role.innerHTML = `${member.role} <span class="block text-2xl leading-[28px] mt-2 text-white md:text-[40px] md:leading-[46px] lg:text-[56px] lg:leading-[64px] lg:mt-5">${member.name}</span>`;
       memberName.textContent = member.name;

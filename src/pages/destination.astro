@@ -140,22 +140,30 @@ import "../scss/index.scss";
   const titanButton = document.getElementById(TITAN);
 
   moonButton?.addEventListener("click", () => {
+    if (moonButton?.getAttribute("aria-selected") === "true") return;
+
     changeDestination(moonButton.id);
     changeAriaSelected(moonButton.id);
   });
 
   marsButton?.addEventListener("click", () => {
+    if (marsButton?.getAttribute("aria-selected") === "true") return;
+
     changeDestination(marsButton.id);
     changeAriaSelected(marsButton.id);
   });
 
   europaButton?.addEventListener("click", () => {
+    if (europaButton?.getAttribute("aria-selected") === "true") return;
+
     changeDestination(europaButton.id);
     changeAriaSelected(europaButton.id);
   });
 
   titanButton &&
     titanButton.addEventListener("click", () => {
+      if (titanButton?.getAttribute("aria-selected") === "true") return;
+
       changeDestination(titanButton.id);
       changeAriaSelected(titanButton.id);
     });
