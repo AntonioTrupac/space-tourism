@@ -41,28 +41,28 @@ import "../scss/index.scss";
           id="commander"
           role="tab"
           aria-selected="true"
-          class="w-[10px] h-[10px] mr-4 rounded-full border-2 border-transparent bg-secondary/20 focus:outline-none focus:border-secondary aria-selected:border-white aria-selected:bg-white"
+          class="w-[10px] h-[10px] lg:w-[15px] lg:h-[15px] mr-4 rounded-full border-2 border-transparent bg-secondary/20 focus:outline-none focus:border-secondary aria-selected:border-white aria-selected:bg-white"
         >
         </button>
         <button
           id="pilot"
           role="tab"
           aria-selected="false"
-          class="w-[10px] h-[10px] mr-4 rounded-full border-2 border-transparent bg-secondary/20 focus:outline-none focus:border-secondary aria-selected:border-white aria-selected:bg-white"
+          class="w-[10px] h-[10px] lg:w-[15px] lg:h-[15px] mr-4 rounded-full border-2 border-transparent bg-secondary/20 focus:outline-none focus:border-secondary aria-selected:border-white aria-selected:bg-white"
         >
         </button>
         <button
           id="mission-specialist"
           role="tab"
           aria-selected="false"
-          class="w-[10px] h-[10px] mr-4 rounded-full border-2 border-transparent bg-secondary/20 focus:outline-none focus:border-secondary aria-selected:border-white aria-selected:bg-white"
+          class="w-[10px] h-[10px] lg:w-[15px] lg:h-[15px] mr-4 rounded-full border-2 border-transparent bg-secondary/20 focus:outline-none focus:border-secondary aria-selected:border-white aria-selected:bg-white"
         >
         </button>
         <button
           id="flight-engineer"
           role="tab"
           aria-selected="false"
-          class="w-[10px] h-[10px] rounded-full border-2 border-transparent bg-secondary/20 focus:outline-none focus:border-secondary aria-selected:border-white aria-selected:bg-white"
+          class="w-[10px] h-[10px] lg:w-[15px] lg:h-[15px] rounded-full border-2 border-transparent bg-secondary/20 focus:outline-none focus:border-secondary aria-selected:border-white aria-selected:bg-white"
         >
         </button>
       </div>
@@ -73,7 +73,7 @@ import "../scss/index.scss";
           class="uppercase font-bellefair leading-[18px] md:text-2xl md:leading-[28px] lg:text-[32px] lg:leading-[37px] text-white/50"
         >
           Commander <span
-            class="block text-2xl leading-[28px] mt-2 text-white md:text-[40px] md:leading-[46px] lg:text-[56px] lg:leading-[64px] lg:mt-5"
+            class="block text-2xl leading-[28px] mt-2 text-white md:text-[40px] md:leading-[46px] lg:text-[56px] lg:leading-[64px] lg:mt-5 lg:tracking-normal"
             >Douglas Hurley</span
           >
         </h2>
@@ -146,9 +146,19 @@ import "../scss/index.scss";
 
     const imageSrc = image?.querySelector("source");
 
+    if (buttonId === "mission specialist") {
+      image?.classList.remove("lg:w-[568px]");
+      image?.classList.add("lg:w-[458px]", "h-[654px]");
+    } else {
+      image?.classList.remove("h-[445px]");
+      image?.classList.add("lg:w-[568px]");
+    }
+
     if (role && memberName && desc && imageSrc && member) {
       role.innerHTML = `${member.role} <span class="block text-2xl leading-[28px] mt-2 text-white md:text-[40px] md:leading-[46px] lg:text-[56px] lg:leading-[64px] lg:mt-5">${member.name}</span>`;
       memberName.textContent = member.name;
+      console.log(buttonId);
+
       imageSrc.srcset = member.images.png;
 
       desc.textContent = member.bio;
